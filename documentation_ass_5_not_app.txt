@@ -1,0 +1,12 @@
+As my dataset I choose "TikTok Trending Videos" from a free dataset source Kaggle.
+I choose this dataset, because it looked interesting and I haven't worked with json files before, usually worked with table format datasets, so this is an interesting challenge.
+
+Link to dataset:
+https://www.kaggle.com/datasets/erikvdven/tiktok-trending-december-2020?resource=download
+
+As my programming language I choose Python. Very popular among Data Engineers.
+The libraries are pandas and plotly, since they have a good integration with each other and also allows to create interactive visualization for data.
+
+Pandas is used for data transformation, cleaning and preparation.
+Plotly is used for data visualization.
+
