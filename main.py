@@ -9,20 +9,20 @@ prGreen(" ============== Python is working! ==============")
 
 json_data = 'Dataset/trending.json'
 
-# df = pd.json_normalize(json_data)
+# prep_df = pd.json_normalize(json_data)
 
 with open(json_data, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # print(data)
 
-df = pd.json_normalize(data['collector'])
-# print(df)
+prep_df = pd.json_normalize(data['collector'])
+# print(prep_df)
 
-# prCyan(df.columns)
+# prCyan(prep_df.columns)
 
-# prGreen(df.head()) #prints first 5 rows
-# prGreen(df.info()) # all columns, datatypes
+# prGreen(prep_df.head()) #prints first 5 rows
+# prGreen(prep_df.info()) # all columns, datatypes
 
 
 new_column_names = ['id', 'description', 'time_created', 'web_video_url', 'video_url', 'video_url_no_watermark', 'likes_count', 'shared_count', 'played_count', 'comment_count', 'download_count', 'mentions', 'hashtags', 'author_id', 
@@ -31,9 +31,14 @@ new_column_names = ['id', 'description', 'time_created', 'web_video_url', 'video
 
 # print(len(new_column_names))
 
-df.columns = (new_column_names)
+prep_df.columns = (new_column_names)
 
-# prCyan(df.info()) # all columns, datatypes
+# prCyan(prep_df.info()) # all columns, datatypes
 
-prLightPurple('========================================================================================================================================================================================================')
+# prLightPurple('========================================================================================================================================================================================================')
+# print(prep_df)
+
+df = prep_df[['id', 'description', 'time_created', 'likes_count', 'shared_count', 'played_count', 'comment_count', 'download_count', 'hashtags', 'author_id', 'name', 'nick_name', 'verified', 'music_id', 'music_name', 'music_author', 'video_duration']]
+
 print(df)
+

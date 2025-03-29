@@ -11,7 +11,13 @@ Pandas is used for data transformation, cleaning and preparation.
 Plotly is used for data visualization.
 
 Process of working with the data:
+
+------------- data preparation ---------------
 1. Uploaded and loaded the json file
 2. Normalized the json when transforming to df, to avoid nesting
 3. Checked out all available columns with df.info() command
 4. Created a list with new column names, applies the names to df
+5. Created new df and choose only needed columns
+
+------------- data analysis --------------
+6. Examine each column and its distinct values
