@@ -18,6 +18,27 @@ Process of working with the data:
 3. Checked out all available columns with df.info() command
 4. Created a list with new column names, applies the names to df
 5. Created new df and choose only needed columns
+8a. Transform hashstag list into another df
 
 ------------- data analysis --------------
-6. Examine each column and its distinct values
+6. Examine each column, its distinct values and count using value_counts()
+7. Divide columns which can be grouped and counted, and which not 
+Can:
+author_id
+verified
+music_id
+music_author
+video_duration
+
+Cannot:
+id
+
+Can be transformed into range:
+time_created
+likes_count
+shared_count
+played_count
+comment_count
+
+8. Column hashtag is another list with its own structure and columns, so it will be transformed into second df
+9. Create scenarios based on availabel columns

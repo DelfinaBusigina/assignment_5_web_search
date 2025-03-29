@@ -38,7 +38,22 @@ prep_df.columns = (new_column_names)
 # prLightPurple('========================================================================================================================================================================================================')
 # print(prep_df)
 
-df = prep_df[['id', 'description', 'time_created', 'likes_count', 'shared_count', 'played_count', 'comment_count', 'download_count', 'hashtags', 'author_id', 'name', 'nick_name', 'verified', 'music_id', 'music_name', 'music_author', 'video_duration']]
+df = prep_df[['id', 'description', 'time_created', 'likes_count', 'shared_count', 'played_count', 'comment_count', 'author_id', 'name', 'nick_name', 'verified', 'music_id', 'music_name', 'music_author', 'video_duration']]
+# hash_df = pd.json_normalize(prep_df['hashtags'])
+
+hash_df = prep_df['hashtags'].apply(lambda x: x if isinstance(x, list) else [])
+hash_df = hash_df.explode('hashtags').reset_index(drop=True)
+hash_df = pd.json_normalize(hash_df)
+
 
 print(df)
+prGreen('------------------------------------------')
+print(hash_df)
 
+# =============================   Analysing the data   ========================================
+
+dist_crt_time = df['video_duration'].value_counts()
+print(dist_crt_time)
+
+# dist_hs = hash_df['id'].value_counts()
+# prLightPurple(dist_hs)
