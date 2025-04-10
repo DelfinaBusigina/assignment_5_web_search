@@ -1,0 +1,40 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.data {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.data th,
+.data td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.table-container {
+    max-height: 400px;
+    max-width: 90%;
+    overflow: auto;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}
+
+.data {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px;
+}
+
+.data th,
+.data td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+}

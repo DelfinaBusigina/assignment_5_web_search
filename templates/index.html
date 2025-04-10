@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Merge DataFrames</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <h1>Upload Two CSV Files</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file1" required><br><br>
+        <input type="file" name="file2" required><br><br>
+        <label for="joins">Choose join type:</label>
+        <select id="joins" name="joins">
+            <option value="inner">Inner Join/Regular Join</option>
+            <option value="outer">Outer Join</option>
+            <option value="left">Left Join</option>
+            <option value="right">Right Join</option>
+        </select><br><br>
+        <label for="on_col">Choose column to join on:</label> <input type="text" name="on_col" required><br><br>
+        <button type="submit">Upload & Merge</button>
+    </form>
+
+    <h2>First Dataset</h2>
+    <div class="table-container">
+        {{ tables[0]|safe }}
+    </div>
+
+    <h2>Second Dataset</h2>
+    <div class="table-container">
+        {{ tables[1]|safe }}
+    </div>
+
+    <h2>Merged Dataset</h2>
+    <div class="table-container">
+        {{ tables[2]|safe }}
+    </div>
+</body>
+
+</html>
